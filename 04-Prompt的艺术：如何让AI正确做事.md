@@ -70,6 +70,8 @@ Prompt 的质量直接影响 AI 的输出质量。一个好的 Prompt 可以：
 
 Claude Code 的系统提示词不是一个大而全的字符串，而是由多个**可组合的层**组成的。`src/utils/systemPrompt.ts` 中的 `buildEffectiveSystemPrompt` 函数揭示了这个设计：
 
+![prompt-priority](./assets/prompt-priority.png)
+
 ```typescript
 // 系统提示词的优先级
 export function buildEffectiveSystemPrompt({
@@ -170,6 +172,8 @@ export const SYSTEM_PROMPT_DYNAMIC_BOUNDARY =
 ### 工具提示词的结构
 
 每个工具都有一个专门的提示词，描述它的功能和用法。拿 `BashTool` 来说，它的提示词包含了详细的使用说明：
+
+![tool-prompt-anatomy](./assets/tool-prompt-anatomy.png)
 
 ```typescript
 // src/tools/BashTool/prompt.ts
@@ -282,6 +286,8 @@ unless explicitly instructed. Instead, use the appropriate dedicated tool.`
 
 Claude Code 通过区分"静态"和"动态"内容来优化这个问题：
 
+![static-dynamic-content](./assets/static-dynamic-content.png)
+
 ```typescript
 // SYSTEM_PROMPT_DYNAMIC_BOUNDARY 标记
 // 之前的部分是静态的，可以缓存
@@ -356,6 +362,8 @@ Claude Code 会检测这些变化，并相应地更新缓存。
 ### Git 提交的正确流程
 
 Claude Code 的 Git 提交提示词堪称"教科书级别"。让我们详细分析一下：
+
+![git-commit-process](./assets/git-commit-process.png)
 
 ```typescript
 // src/tools/BashTool/prompt.ts
